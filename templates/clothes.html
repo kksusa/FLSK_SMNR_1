@@ -1,0 +1,21 @@
+{% extends 'base_market.html' %}
+
+{% block title %}
+    {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<body>
+<div class="row">
+    <h1 class="col-12 text-monospace text-center">Одежда</h1>
+    {% for item in clothes %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+        <p>{{ item.price + "$" }}
+        <p><img src="{{ item.photo }}" class="col-12 col-md-6 img-fluid" alt="Фото"></p>
+    </div>
+    {% endfor %}
+</div>
+</body>
+{% endblock %}
